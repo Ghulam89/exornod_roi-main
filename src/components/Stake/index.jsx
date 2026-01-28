@@ -23,13 +23,6 @@ const StakeComponent = (props) => {
 
   const link_notify = () => toast("Referral Link Copied!");
 
-
-
-
-
-
-
-
   return (
     <div className="container tw-relative tw-pt-11">
       <LeaderShipModal
