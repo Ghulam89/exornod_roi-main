@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaArrowCircleLeft, FaRegUser } from "react-icons/fa";
 import Button from "../Button";
 import { MdMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 import logo from '../../assets/images/logo.png';
-import { FaAngleDown, FaAngleLeft, FaAnglesDown } from "react-icons/fa6";
-import { useWeb3Modal,useWeb3ModalTheme,use } from '@web3modal/wagmi/react'
-import { useAccount, useReadContract, useWriteContract } from "wagmi";
+import { FaAngleDown } from "react-icons/fa6";
+import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAccount } from "wagmi";
 const Header = () => {
   const [open1, setOpen] = useState(false);
 

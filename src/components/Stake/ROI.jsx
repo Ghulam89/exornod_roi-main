@@ -4,72 +4,17 @@ import Tabs from "../../components/Tabs";
 
 const ROI = (props) => {
 
-  const [ROI, set_ROI] = useState(0);
   const [Expected_return, set_Expected_return] = useState(0);
   const [withdrawFee, set_withdrawFee] = useState(0);
   const [afterWithdraw, set_afterWithdrawFee] = useState(0);
-
-
-
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
   const dropdownRef = useRef(null);
-
   const [isOpen2, setIsOpen2] = useState(false);
-  const [selectedOption2, setSelectedOption2] = useState(null);
   const dropdownRef2 = useRef(null);
-
   const [isOpen3, setIsOpen3] = useState(false);
-  const [selectedOption3, setSelectedOption3] = useState(null);
   const dropdownRef3 = useRef(null);
-
   const [isOpen4, setIsOpen4] = useState(false);
-  const [selectedOption4, setSelectedOption4] = useState(null);
   const dropdownRef4 = useRef(null);
-
-  const [investAmount, setInvestAmount] = useState("");
-  const [withdrawAmount, setWithdrawAmount] = useState("");
-
-  const options = ["$50", "$100", "$200", "$300", "$500"];
-  const bookOptions = ["Book #1", "Book #2", "Book #3"];
-  const durationOptions = ["365 Days"];
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleToggle2 = () => {
-    setIsOpen2(!isOpen2);
-  };
-
-  const handleToggle3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-
-  const handleToggle4 = () => {
-    setIsOpen4(!isOpen4);
-  };
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
-
-  const handleOption2Click = (option) => {
-    setSelectedOption2(option);
-    setIsOpen2(false);
-  };
-
-  const handleOption3Click = (option) => {
-    setSelectedOption3(option);
-    setIsOpen3(false);
-  };
-
-  const handleOption4Click = (option) => {
-    setSelectedOption4(option);
-    setIsOpen4(false);
-  };
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -104,11 +49,7 @@ const ROI = (props) => {
 
 
 
-  function cal_after_withdraw(_withdraw_Amount) 
-  {
-    ;
-    
-  }
+ 
 
 
   function find_Exp_earn(amount) {

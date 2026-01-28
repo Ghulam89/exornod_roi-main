@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Button";
 import Header from "../header";
-import { Link } from "react-router-dom";
-import { RiArrowRightFill } from "react-icons/ri";
 const Hero = (props) => {
 
 
@@ -14,20 +12,20 @@ const Hero = (props) => {
 
 
 
-  const teamMembers = [
-  {
-    name: Number(props.totalusers),
-    role: "Total Users",
-  },
-  {
-    name: Number(props.totalbusiness)/10**6,
-    role: "Total Business",
-  },
-  {
-    name:Number(props.total_withdraw)/10**6,
-    role: "Total Withdraw",
-  },
-];
+//   const teamMembers = [
+//   {
+//     name: Number(props.totalusers),
+//     role: "Total Users",
+//   },
+//   {
+//     name: Number(props.totalbusiness)/10**6,
+//     role: "Total Business",
+//   },
+//   {
+//     name:Number(props.total_withdraw)/10**6,
+//     role: "Total Withdraw",
+//   },
+// ];
   return (
     <div className=" tw-mb-10 tw-bg-cover tw-relative tw-bg-center tw-w-full tw-h-auto">
       <Header />

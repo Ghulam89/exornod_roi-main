@@ -1,15 +1,14 @@
 import React from 'react'
 import Button from '../Button'
-import { FaArrowRight } from 'react-icons/fa6'
-import { FaLongArrowAltRight, FaRegUser } from 'react-icons/fa';
+import { FaLongArrowAltRight } from 'react-icons/fa';
 // import EBM_Avenue from '../EBM_avenue'
 const About = () => {
 
 
-  const openPdfInNewTab = () => {
-    const pdfUrl = require("../../assets/images/YouSamaritan White Paper v2.pdf");
-    window.open(pdfUrl, "_blank");
-  };
+  // const openPdfInNewTab = () => {
+  //   const pdfUrl = require("../../assets/images/YouSamaritan White Paper v2.pdf");
+  //   window.open(pdfUrl, "_blank");
+  // };
 
 
   return (

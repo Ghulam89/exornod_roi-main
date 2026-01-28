@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { propTypes } from "react-copy-to-clipboard";
+// import { propTypes } from "react-copy-to-clipboard";
 import { FaInfoCircle } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import moment from "moment";

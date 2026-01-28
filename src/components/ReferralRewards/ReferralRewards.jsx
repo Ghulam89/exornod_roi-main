@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { FaLock } from "react-icons/fa";
-import { FaDollarSign, FaUsers } from "react-icons/fa6";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -1,21 +1,15 @@
 import React, { useState } from "react";
-import Staking from "../../screens/Staking";
 import { GoCopy } from "react-icons/go";
-import { FaRegStar, FaStar } from "react-icons/fa";
 import ROI from "./ROI";
 import LeaderShipModal from "../LeaderShipBonus/LeaderShipBonus";
 
 import {
   CopyToClipboard,
-  PartnerIcon,
-  CycleIcon,
 } from "react-copy-to-clipboard";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Web3 from "web3";
 
 const StakeComponent = (props) => {
-  const [tabs, setTabs] = useState("staking");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 

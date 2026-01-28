@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Header from "../../components/header";
-import { FaArrowRight } from "react-icons/fa6";
 import Button from "../../components/Button";
-import Footer from "../../components/footer";
 import Tabs from "../../components/Tabs";
 
 const Staking = () => {
@@ -22,18 +19,10 @@ const Staking = () => {
   const [selectedOption4, setSelectedOption4] = useState(null);
   const dropdownRef4 = useRef(null);
 
-  const options = ["150 days", "Option 2", "Option 3"];
   const options2 = ["0", "60", "2323"];
   const options3 = ["7.78", "44.23", "3.54"];
   const options4 = ["7.78", "44.23", "3.54"];
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleToggle2 = () => {
-    setIsOpen2(!isOpen2);
-  };
 
   const handleToggle3 = () => {
     setIsOpen3(!isOpen3);
@@ -43,10 +32,7 @@ const Staking = () => {
     setIsOpen4(!isOpen4);
   };
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
+ 
 
   const handleOption2Click = (option) => {
     setSelectedOption2(option);

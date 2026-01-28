@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaRegUser } from "react-icons/fa";
-import Button from "../Button";
-import { MdMenu } from "react-icons/md";
-import { MdOutlineClose } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 
 const PanelNav = () => {
