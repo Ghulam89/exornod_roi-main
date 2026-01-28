@@ -51,13 +51,13 @@ const StakeComponent = (props) => {
                 <div className=" tw-relative">
                   <img
                     src={require("../../assets/images/profile.png")}
-                    className="  tw-rounded-full"
+                    className=" tw-border tw-border-primary tw-rounded-full"
                     alt=""
                   />
                   
-                  <div className="   tw-flex tw-gap-1 tw-bg-[#20193A] pl-2 tw-border tw-border-[#413A5B] tw-absolute tw-bottom-0 tw-w-full tw-rounded-full"> 
+                  <div className="   tw-flex tw-gap-1 tw-bg-[#20193A] tw-border tw-border-[#413A5B] tw-absolute tw-bottom-0 tw-w-full tw-rounded-full"> 
 
-                      <p  style={{text:'white'}} className=" m-0 pl-2 tw-text-white tw-text-center tw-items-center " >{props.rank>0?"Rank A"+props.rank:"Rank A0"} </p>
+                      <span  style={{text:'white'}} className=" tw-text-white text-center tw-items-center " >{props.rank>0?"Rank A"+props.rank:"Rank A0"} </span>
                       </div>
 
                 </div>
@@ -93,7 +93,7 @@ const StakeComponent = (props) => {
             </div> */}
 
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Total Income
                 </h6>
@@ -107,7 +107,7 @@ const StakeComponent = (props) => {
             </div>
 
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Current Balance
                 </h6>
@@ -119,7 +119,7 @@ const StakeComponent = (props) => {
               </div>
             </div>
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   ROI Earning
                 </h6>
@@ -132,7 +132,7 @@ const StakeComponent = (props) => {
               </div>
             </div>
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Self Investment
                 </h6>
@@ -145,7 +145,7 @@ const StakeComponent = (props) => {
               </div>
             </div>
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Total Withdraw
                 </h6>
@@ -158,7 +158,7 @@ const StakeComponent = (props) => {
               </div>
             </div>
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Total Referrals
                 </h6>
@@ -171,7 +171,7 @@ const StakeComponent = (props) => {
               </div>
             </div>
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Direct Earnings
                 </h6>
@@ -184,7 +184,7 @@ const StakeComponent = (props) => {
 
             </div>
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Total Team
                 </h6>
@@ -198,7 +198,7 @@ const StakeComponent = (props) => {
             </div>
 
             <div className=" col-md-6">
-              <div className="right-panel-card tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-rounded-3xl p-4">
                 <h6 className="   tw-text-white  tw-font-inter ">
                   Total Team Business
                 </h6>
@@ -287,7 +287,7 @@ const StakeComponent = (props) => {
                 <span className="  tw-text-white  tw-font-sm"> usdt</span>
 
               </div> */}
-              <div className="right-panel-card tw-mt-5 tw-rounded-2xl p-3">
+              <div className="right-panel-card tw-mt-5 tw-rounded-3xl p-4">
                 <h6 className="  tw-text-white  tw-font-poppins tw-flex tw-gap-3  tw-justify-between tw-items-center">
                 Invite Link
                 <CopyToClipboard
