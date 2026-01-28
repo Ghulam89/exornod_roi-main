@@ -1,0 +1,98 @@
+import React, { useState } from "react";
+import Button from "../Button";
+import Header from "../header";
+import { Link } from "react-router-dom";
+import { RiArrowRightFill } from "react-icons/ri";
+const Hero = (props) => {
+
+
+  const openPdfInNewTab = () => {
+    const pdfUrl = require("../../assets/images/Exornod_plan.pdf");
+    window.open(pdfUrl, "_blank");
+  };
+
+
+
+
+  const teamMembers = [
+  {
+    name: Number(props.totalusers),
+    role: "Total Users",
+  },
+  {
+    name: Number(props.totalbusiness)/10**6,
+    role: "Total Business",
+  },
+  {
+    name:Number(props.total_withdraw)/10**6,
+    role: "Total Withdraw",
+  },
+];
+  return (
+    <div className=" tw-mb-10 tw-bg-cover tw-relative tw-bg-center tw-w-full tw-h-auto">
+      <Header />
+
+      <div className="container tw-mx-auto tw-relative tw-pt-6">
+        <div className="row      sm:tw-text-left tw-text-center g-5 tw-items-center">
+          <div className="col-lg-6 col-md-12">
+            
+            <h1 className="tw-font-Dots tw-pt-2   text-white md:tw-text-5xl tw-text-3xl">
+              Shaping the Future <br /> of{" "}
+              <span className="hero-title-gradient tw-font-Dots">Decentralized </span>
+              <span className="hero-title-gradient tw-font-Dots"> Innovation </span> 
+            </h1>
+            <p className=" tw-text-white sm:tw-text-start tw-text-center    tw-font-extralight tw-leading-7 tw-pt-4 tw-text-lg t">
+             A secure ecosystem for DApps, blockchain solutions, and community-driven technologies. Experience the next evolution in decentralized finance.
+            </p>
+
+            <div className=" tw-flex tw-flex-row  tw-justify-center sm:tw-justify-start sm:tw-gap-4 tw-gap-2 tw-items-center tw-pt-4">
+              <div>
+                <Button
+                  
+                  onClick={openPdfInNewTab}
+                  className={"  tw-text-black  sm:tw-text-base tw-text-xs tw-whitespace-nowrap tw-rounded-lg  tw-font-normal"}
+                  label={"Read Plan"}
+                />
+              </div>
+             
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12 tw-flex tw-justify-center tw-items-center ">
+            <div className="tw-relative tw-w-full">
+              <img
+                src={require("../../assets/images/home.png")}
+                className="tw-w-full tw-relative tw-z-10"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="row ">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="col-lg-4 g-4 col-md-6 ">
+              <div className="  ">
+                <div className="   tw-text-center  tw-rounded-xl  tw-font-Dots tw-bg-[#101010] tw-border tw-border-primary tw-h-32 tw-p-5">
+                  <div className="tw-pb-8 ">
+                    <h3 className="  tw-text-primary tw-text-3xl  tw-font-Dots">
+                      {member.name}
+                    </h3>
+                    <p className="tw-text-white tw-font-Intal tw-pt-3 m-0">{member.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div> */}
+      </div>
+
+      <div className=" tw-absolute -tw-z-10 tw-left-0  tw-top-0">
+        <img src={require("../../assets/images/home_left.png")} alt="" />
+      </div>
+    </div>
+  );
+};
+
+
+
+export default Hero;
