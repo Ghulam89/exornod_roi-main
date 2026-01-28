@@ -1,16 +1,9 @@
 // TeamModal.tsx
 import React from "react";
-import { useSwitchChain, useAccount, useDisconnect } from "wagmi";
-
-const teamData = [
-
-];
-
-
+import { useAccount } from "wagmi";
 
 const TeamMemberShipModal= ({ isOpen, onClose,directs_members }) => {
-
-    const { address,isConnected, isConnecting ,isDisconnected} = useAccount()
+    const { isConnected } = useAccount()
   
   if (!isOpen) return null;
 

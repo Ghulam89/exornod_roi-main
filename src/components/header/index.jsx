@@ -25,9 +25,8 @@ const Header = () => {
     }, 0);
   };
   const [scrollBackground, setScrollBackground] = useState(false);
-  const { open, close } = useWeb3Modal()
-  const { isConnected,isDisconnected,chain } = useAccount()
-  const { address } = useAccount();
+  const { open } = useWeb3Modal()
+  const { address, isConnected } = useAccount();
 
   useEffect(() => {
     const handleScroll = () => {

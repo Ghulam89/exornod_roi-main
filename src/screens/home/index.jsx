@@ -18,31 +18,22 @@ import {
   cont_abi,       
 
 } from "../../components/configs/Contracts.js";
-import { useWeb3Modal } from '@web3modal/wagmi/react'
-
-import { useSwitchChain, useAccount, useDisconnect } from "wagmi";
-
-
-import { useSimulateContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
-import { arbitrum, arbitrumSepolia } from "wagmi/chains";
+import { useSwitchChain, useAccount } from "wagmi";
+import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
 
 
 const Home = () => {
 
 
-  const chainId = process.env.REACT_APP_ENV == "production" ? polygon.id : polygonAmoy.id;
+  const chainId = process.env.REACT_APP_ENV === "production" ? polygon.id : polygonAmoy.id;
 
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
-
-  const [isProcessingPayment, setIsProcessingPayment] = useState(true);
 
 
   const { switchChainAsync } = useSwitchChain();
   const { chainId: currentChainId } = useAccount();
-  const { writeContractAsync,writeContract,data:hash, ...states } = useWriteContract();
-
-  const { address,isConnected, isConnecting ,isDisconnected} = useAccount()
+  const { writeContractAsync, writeContract, data: hash } = useWriteContract();
+  const { address, isConnected, isConnecting, isDisconnected } = useAccount()
 
   const [count, set_count] = useState(0);
 
@@ -75,8 +66,7 @@ const Home = () => {
 
   const [directs, set_directs] = useState("0");
   const [RoiEarning, set_RoiEarning] = useState(0);
-  const [pol_balance, setBalance] = useState(0);
-  const [exor_balance, set_exorBalance] = useState(0);
+  const [exor_balance] = useState(0);
 
   const [usdt_balance, set_usdtBalance] = useState(0);
   const [team, set_team] = useState(0);
@@ -86,13 +76,10 @@ const Home = () => {
 
   
   const [minimum_investment, set_minimum_investment] = useState(0);
-  const [minWithdraw, set_minWithdraw] = useState(0);
-  const [withdrawFee, set_withdrawFee] = useState(0);
-
-  const [maxWithdraw, set_maxWithdraw] = useState(0);
+  const [withdrawFee] = useState(0);
 
   const [Allinvestment, set_Allinvestment] = useState([]);
-  const [withdrawList, setwithdrawList] = useState([]);
+  const [withdrawList] = useState([]);
   const [availBalance, set_availBalance] = useState(0);
   
   const [totalusers, set_totalusers] = useState("0");
@@ -118,7 +105,7 @@ const Home = () => {
   const [total_principle_return    ,   set_total_principle_return] = useState(0);
 
   
-  const [state, setState] = useState({
+  const [state] = useState({
     days: 0,
     minutes: 0,
     hours: 0,
@@ -129,7 +116,7 @@ const Home = () => {
 
 
 
-  const { isLoading: isConfirming, isSuccess: isConfirmed} =
+  const { isSuccess: isConfirmed } =
   useWaitForTransactionReceipt({
     hash,
   })
@@ -140,34 +127,32 @@ const Home = () => {
       mount();
 
     }
-  }, [ address]);
+    // We only want to re-run when the connected address changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [address]);
 
 
-  useEffect(()=>{
-    if(isConfirmed)
-    {
-      if(count==0)
-      {
+  useEffect(() => {
+    if (isConfirmed) {
+      if (count === 0) {
         // alert("ninkn")
         stake1()
-  
       }
-      if(count==1)
-      {
+      if (count === 1) {
         set_count(0)
         notify()
         setInvestment(0)
         mount();
       }
     }
-  
-  
-  },[isConfirmed])
+    // We intentionally depend only on `isConfirmed` to avoid re-triggering on function identity changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConfirmed])
 
 
   async function USDT_approval () {
     try {
-        const tx = await writeContractAsync({
+        await writeContractAsync({
           abi: token_abi,
           address: USDT_address,
           args: [cont_address,( investment ? Number(investment)*10**6 : "0")],
@@ -184,7 +169,7 @@ async function stake1() {
 
 
       try {
-          const tx = await writeContractAsync({
+          await writeContractAsync({
             abi: cont_abi,
             address: cont_address,
             functionName: "invest", 
@@ -206,9 +191,7 @@ async function stake1() {
 
     
     try {
-
-
-        const tx = await writeContractAsync({
+        await writeContractAsync({
           abi: cont_abi,
           address: cont_address,
           functionName: "withdrawReward", 
@@ -301,7 +284,6 @@ async function stake1() {
       set_rank(rank_no)
 
       set_directs_members(directs_members)
-      setBalance(pol_balance);
       set_usdtBalance(usdt_balance);
       setTotalInvestment(user[2])
       set_availBalance((Number(total_earning)) - (Number(user.totalWithdraw_reward)));
@@ -355,14 +337,13 @@ async function stake1() {
 
   
 
-  async function Invest() 
-  {
+  async function Invest() {
     if (isDisconnected) {
       alert("kindly connect your wallet");
       return
 
     }
-    if (investment <= 0 || investment == "") {
+    if (investment <= 0 || investment === "") {
       alert("please write amount ");
       return
     }
@@ -380,7 +361,7 @@ async function stake1() {
     } 
 
 
-    if(chainId != currentChainId )
+    if (chainId !== currentChainId)
       {
         await switchChainAsync({ chainId });
         await USDT_approval?.();
@@ -405,7 +386,7 @@ async function stake1() {
           return;
     
         }
-        if (Number(withdraw_Amount) <= 0 || Number(withdraw_Amount) == "") {
+        if (Number(withdraw_Amount) <= 0) {
           alert("please write amount ");
           return
         }
@@ -426,7 +407,7 @@ async function stake1() {
 
           return;
         }
-        if (chainId != currentChainId )
+        if (chainId !== currentChainId)
           {
             await switchChainAsync({ chainId });
             await claim1?.();
@@ -460,6 +441,7 @@ async function stake1() {
       <ReferralRewards exorUsdPrice={exorUsdPrice} Level_rew={Level_rew} levelBusiness={levelBusiness} Level_locking={Level_locking} directs_members={directs_members} refCount={refCount} levelEarning={levelEarning} />
       
       <Footer/>
+      <ToastContainer />
       {loader && <Loader />}
     </div>
   );

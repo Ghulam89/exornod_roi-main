@@ -43,16 +43,16 @@ const Footer = () => {
               Follow Us
             </p>
             <div className="tw-flex tw-flex-wrap tw-gap-3 sm:tw-gap-4 tw-justify-center md:tw-justify-end">
-              <a href="#" className={footerSocialClass} aria-label="X (Twitter)">
+              <a href="https://x.com" className={footerSocialClass} aria-label="X (Twitter)">
                 <FaXTwitter size={18} className="tw-shrink-0" />
               </a>
-              <a href="#" className={footerSocialClass} aria-label="Facebook">
+              <a href="https://facebook.com" className={footerSocialClass} aria-label="Facebook">
                 <FaFacebookF size={18} className="tw-shrink-0" />
               </a>
-              <a href="#" className={footerSocialClass} aria-label="Instagram">
+              <a href="https://instagram.com" className={footerSocialClass} aria-label="Instagram">
                 <FaInstagram size={18} className="tw-shrink-0" />
               </a>
-              <a href="#" className={footerSocialClass} aria-label="Twitter">
+              <a href="https://twitter.com" className={footerSocialClass} aria-label="Twitter">
                 <FaTwitter size={18} className="tw-shrink-0" />
               </a>
             </div>

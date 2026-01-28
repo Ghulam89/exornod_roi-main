@@ -7,13 +7,13 @@ const ROI = (props) => {
   const [Expected_return, set_Expected_return] = useState(0);
   const [withdrawFee, set_withdrawFee] = useState(0);
   const [afterWithdraw, set_afterWithdrawFee] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
+  const [, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const [isOpen2, setIsOpen2] = useState(false);
+  const [, setIsOpen2] = useState(false);
   const dropdownRef2 = useRef(null);
-  const [isOpen3, setIsOpen3] = useState(false);
+  const [, setIsOpen3] = useState(false);
   const dropdownRef3 = useRef(null);
-  const [isOpen4, setIsOpen4] = useState(false);
+  const [, setIsOpen4] = useState(false);
   const dropdownRef4 = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {

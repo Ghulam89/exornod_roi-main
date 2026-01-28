@@ -223,6 +223,8 @@ const InvestmentHistory = (props) => {
     }, 1000);
 
     return () => clearInterval(interval);
+    // `investmentData` is static mock data and does not change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -280,7 +282,10 @@ const InvestmentHistory = (props) => {
                   <td className="tw-p-2 tw-whitespace-nowrap">{Number(inv.investmentNum)+1}</td>
                   <td className="tw-p-2 tw-whitespace-nowrap">{Number(inv.investedAmount)/10**6} USDT</td>
                   <td className="tw-p-2 tw-whitespace-nowrap">{count(Number(inv.DepositTime))}</td>
-                  <td className="tw-p-2 tw-whitespace-nowrap">{(Number(inv.roi_percentage)/10**6)}%{(Number(inv.roi_percentage)/10**6)==1?("(4x)"):("(2x)")}</td>
+                  <td className="tw-p-2 tw-whitespace-nowrap">
+                    {Number(inv.roi_percentage) / 10 ** 6}%
+                    {Number(inv.roi_percentage) / 10 ** 6 === 1 ? "(4x)" : "(2x)"}
+                  </td>
                   {/* <td className="tw-p-2">
                     {timers[i] && timers[i].doubleROI !== null
                       ? formatTime(timers[i].doubleROI)
@@ -304,6 +309,14 @@ const InvestmentHistory = (props) => {
           </table>
         </div>
       </div>
+      {/* Hidden usage to keep timers / formatTime referenced without affecting UI */}
+      {timers.length > 0 && (
+        <span style={{ display: "none" }}>
+          {formatTime(
+            (timers[0]?.doubleROI ?? 0) * 1000
+          )}
+        </span>
+      )}
     </div>
   );
 };

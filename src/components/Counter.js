@@ -27,6 +27,8 @@ const Counter = (props) => {
     }, 1000);
 
     return () => clearInterval(timer);
+    // We intentionally depend only on `props.time` here.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.time]);
 
   return (
